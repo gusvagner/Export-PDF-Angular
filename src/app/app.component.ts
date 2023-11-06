@@ -5,11 +5,12 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import jsPDF, { CellConfig } from 'jspdf';
 (window as any).pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import html2canvas from 'html2canvas';
+import { ExampleWithDataComponent } from './example-with-data/example-with-data.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ExampleWithDataComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -42,10 +43,8 @@ export class AppComponent {
       "Header2": "Sample value 2",
       "Header3": "Sample value 3",
       "Header4": "Sample value 4",
-    },
-    
+    },    
   ]
-
 
   pdfMake() {
     var docDefinition = {    
